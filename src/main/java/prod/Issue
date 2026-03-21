@@ -1,0 +1,15 @@
+Service A calls Service B. Suddenly Service B becomes very slow. What will happen to Service A and how will you prevent cascading failures?
+
+
+“When Service B becomes slow, threads
+ in Service A get blocked waiting for responses,
+ leading to thread pool exhaustion and increased latency.
+ This can cascade and bring down Service A as well.
+ To prevent this, I would first introduce timeouts so
+ that threads don’t wait indefinitely.
+ Then, I would use circuit breakers to stop calling B
+  when it’s unhealthy. Bulkhead isolation ensures that calls
+  to B don’t consume all resources. Controlled retries with
+  exponential backoff handle transient failures, while fallbacks
+  provide degraded responses to users. Additionally,
+  caching and rate limiting reduce load on Service B and improve overall system resilience.”

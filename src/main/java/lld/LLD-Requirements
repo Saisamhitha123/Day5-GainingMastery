@@ -1,0 +1,39 @@
+Shopping Cart
+
+-- LLD requirements
+
+Functional Requirements:
+
+1. User should be able to add/update/remove items to the cart.
+2. System should be able to calculate price once the products are added/updated
+3. System should be able to reflect changes in the prices.
+4. System should be able to sync data across devices.
+5. System should be able to store details in the cart.
+6. System should be able to display once the product goes out of stock.
+
+Non Functional Requirements:
+
+1. Availability
+2. Low Latency
+3. Scalable
+4. Eventual Consistency
+5. Durability
+
+Entities
+
+1. Cart
+2. Product
+3. User
+4. CartItem
+
+
+Edge Cases:
+
+1.Multiple users adding product at the same time -- check quantity at checkout
+2.Price updated during checkout -- refresh at checkout
+3.User accessing from multiple devices -- optimistic locking
+4.Multiple users removing product from cart -- check quantity at checkout
+5.Product goes out of stock after adding to cart --  check quantity at checkout/update isAvailable to false
+6.Cart expiry / abandoned cart -- use last updated and expire after certain time
+7.Price mismatch during payment -- Final validation BEFORE payment
+

@@ -1,0 +1,36 @@
+news Feed System:
+
+HLD - Requirements
+
+Functional Requirements:
+
+1. System should be able to display posts and see friend's post on feed page.
+2. System should be able to have criteria for display news - reverse chronological order
+3. Should support images/videos.
+
+Non Functional Requirements:
+
+1. Consistent
+2. Scalable
+3. Durability
+
+Back of the envelope estimations:
+
+1. MAU : 1 billion
+2. DAU : 50 percent of 1 billion
+3. 500 million -- users per day
+4. 500 million users * 4 posts per day = 2000 million posts per day
+5. posts per sec = 2000 million posts per day = 20000 posts per sec
+6. Each post size avg = 100 MB  * 20000 posts per sec = 2 GB sec
+7. year = 2 * 86400 = 2 * 10^5 GB = 200 TB data
+
+
+read heavy/write heavy -- Read heavy
+
+API Design
+
+getPosts()
+CRUD on posts()
+
+
+-- Fanout Service
