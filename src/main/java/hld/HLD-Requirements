@@ -21,8 +21,8 @@ Back of the envelope estimations:
 3. 500 million -- users per day
 4. 500 million users * 4 posts per day = 2000 million posts per day
 5. posts per sec = 2000 million posts per day = 20000 posts per sec
-6. Each post size avg = 100 MB  * 20000 posts per sec = 2 GB sec
-7. year = 2 * 86400 = 2 * 10^5 GB = 200 TB data
+6. Each post size avg = 500 KB  * 20000 posts per sec = 10 GB/sec
+7. year = 10 GB * 365 * 86400 = 315PB
 
 
 read heavy/write heavy -- Read heavy
